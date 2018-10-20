@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     if (mQuestionNumber == que.mQuestions.length) {
 
                         Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 5");
+                        i.putExtra("Score", score + " / 6");
                         startActivity(i);
                     }
 
@@ -81,12 +81,12 @@ public class MainActivity extends AppCompatActivity {
                     if (mQuestionNumber == que.mQuestions.length) {
 
                         Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 5");
+                        i.putExtra("Score", score + " / 6");
                         startActivity(i);
                     }
 
                     Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                    i.putExtra("Score", score + " / 5");
+                    i.putExtra("Score", score + " / 6");
                     startActivity(i);
 
 
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     if (mQuestionNumber == que.mQuestions.length) {
 
                         Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 5");
+                        i.putExtra("Score", score + " / 6");
                         startActivity(i);
                     }
 
@@ -123,12 +123,12 @@ public class MainActivity extends AppCompatActivity {
                     if (mQuestionNumber == que.mQuestions.length) {
 
                         Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 5");
+                        i.putExtra("Score", score + " / 6");
                         startActivity(i);
                     }
 
                     Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                    i.putExtra("Score", score + " / 5");
+                    i.putExtra("Score", score + " / 6");
                     startActivity(i);
 
 
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                     if (mQuestionNumber == que.mQuestions.length) {
 
                         Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 5");
+                        i.putExtra("Score", score + " / 6");
                         startActivity(i);
                     }
 
@@ -164,12 +164,12 @@ public class MainActivity extends AppCompatActivity {
                     if (mQuestionNumber == que.mQuestions.length) {
 
                         Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 5");
+                        i.putExtra("Score", score + " / 6");
                         startActivity(i);
                     }
 
                     Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                    i.putExtra("Score", score + " / 5");
+                    i.putExtra("Score", score + " / 6");
                     startActivity(i);
 
 
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
                     if (mQuestionNumber == que.mQuestions.length) {
 
                         Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 5");
+                        i.putExtra("Score", score + " / 6");
                         startActivity(i);
                     }
 
@@ -203,12 +203,12 @@ public class MainActivity extends AppCompatActivity {
                     if (mQuestionNumber == que.mQuestions.length) {
 
                         Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 5");
+                        i.putExtra("Score", score + " / 6");
                         startActivity(i);
                     }
 
                     Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                    i.putExtra("Score",score + " / 5");
+                    i.putExtra("Score",score + " / 6");
                     startActivity(i);
 
 

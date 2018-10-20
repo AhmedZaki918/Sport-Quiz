@@ -3,21 +3,23 @@ package com.example.android.sportquiz;
 public class Questions {
 
 
-    public   String[] mQuestions = {"How many wheels in a car ?",
-            "How many batteries in a car ?",
-            "Which of the following is germany brand ?",
-            "Which of the following is american brand ?",
-            "Which of the following is italy brand ?"};
+    public   String[] mQuestions = {"Who is highest goalscorer in world cup football history ?",
+            "How many times has Brazil won the FIFA World Cup ?",
+            "What's the best rank did El Ahly club achieve in clubs world cup ? ?",
+            "Who is the current technical manager for Italian Napoli club ?",
+            "How many times did Egypt's first team participate in world cup ?",
+            "Who is the hero of English Premier League last season ?"};
 
 
-    public  String[][] mChoices = { {"4", "3", "2", "5"},
-            {"4", "1", "2", "3"},
-            {"BMW", "Toyta", "Ford","Fiat"},
-            {"Toyta", "Nissian", "Dodge", "Opel"},
-            {"Jaguar", "GTR", "Ford","Fiat"}
+    public  String[][] mChoices = { {"Miroslav Klose", "Ronaldo", "Maradona", "Pele"},
+            {"3", "4", "5", "6"},
+            {"Second rank", "Sixth rank", "Third rank","Fifth rank"},
+            {"Jose Mourinho", "Pep Guardiola", "Carlo Ancelotti", "Jurgen Klopp"},
+            {"1", "2", "3","4"},
+            {"Manchester United","Liverpool FC", "Manchester City", "chelsea"}
     };
 
-    public  String[] mAnswer = {"4", "1", "BMW", "Dodge", "Fiat"};
+    public  String[] mAnswer = {"Miroslav Klose", "5", "Third rank", "Carlo Ancelotti", "3","Manchester City"};
 
 
 

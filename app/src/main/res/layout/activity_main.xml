@@ -49,8 +49,6 @@
                 style="@style/Buttons_1_2"
                 android:background="@color/Buttons"
                 android:text="@string/Choice1"
-
-
                 />
 
             <!-- Choice B -->
