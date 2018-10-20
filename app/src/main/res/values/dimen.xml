@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="textSizeScore">25sp</dimen>
+    <dimen name="textSizeGo">100sp</dimen>
+    <dimen name="textSizeButtons">30sp</dimen>
+    <dimen name="layout_marginTop">245dp</dimen>
+    <dimen name="layout_margin">4dp</dimen>
+    <dimen name="layout_width">0dp</dimen>
+    <dimen name="layout_height">100dp</dimen>
+    <dimen name="nextTextSize">18sp</dimen>
+
+</resources>

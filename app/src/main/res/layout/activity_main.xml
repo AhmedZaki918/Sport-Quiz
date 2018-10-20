@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Displays the score -->
+    <TextView
+        android:id="@+id/Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="casual"
+        android:text="@string/score"
+        android:textSize="@dimen/textSizeScore" />
+
+    <!-- Displays the question -->
+    <TextView
+        android:id="@+id/Question"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/Score"
+        android:layout_marginBottom="15dp"
+        android:background="@color/Question"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/Question"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/textSizeGo" />
+
+    <!-- ViewGroup for all buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- ViewGroup for buttons A & B -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Choice A -->
+            <Button
+                android:id="@+id/answer1"
+                style="@style/Buttons_1_2"
+                android:background="@color/Buttons"
+                android:text="@string/Choice1"
+
+
+                />
+
+            <!-- Choice B -->
+            <Button
+
+                android:id="@+id/answer2"
+                style="@style/Buttons_1_2"
+                android:background="@color/Buttons"
+                android:text="@string/Choice2" />
+
+
+        </LinearLayout>
+
+        <!-- ViewGroup for buttons C & D -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Choice C -->
+            <Button
+                android:id="@+id/answer3"
+                style="@style/Buttons_3_4"
+                android:background="@color/Buttons"
+                android:text="@string/Choice3" />
+
+            <!-- Choice D -->
+            <Button
+                android:id="@+id/answer4"
+                style="@style/Buttons_3_4"
+                android:background="@color/Buttons"
+                android:text="@string/Choice4" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- Display the next question -->
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="90dp"
+        android:background="@color/Next"
+        android:text="@string/next"
+        android:textSize="@dimen/nextTextSize" />
+
+
+</RelativeLayout>
