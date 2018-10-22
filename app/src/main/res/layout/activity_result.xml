@@ -7,28 +7,39 @@
     android:background="@color/ActivityResult"
     tools:context=".ResultActivity">
 
-
+    <!--Displays text view Score    -->
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/Result_TextView"
         style="@style/ResultActivity"
         android:layout_alignParentTop="true"
         android:layout_marginTop="80dp"
         android:text="@string/scoreResultActivity"
         android:textSize="70sp" />
 
+    <!--Displays text view Score in numbers   -->
     <TextView
-
-        android:id="@+id/finalScore"
+        android:id="@+id/finalScore_TextView"
         style="@style/ResultActivity"
-        android:layout_below="@id/result"
+        android:layout_below="@id/Result_TextView"
         android:text="@string/finalScore"
         android:textColor="@color/Black"
-        android:textSize="50sp"
+        android:textSize="50sp" />
 
-        />
+    <!--Displays text view Good Job    -->
+    <TextView
+        android:id="@+id/goodJob_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/finalScore_TextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:fontFamily="casual"
+        android:text="@string/goodJob"
+        android:textSize="50sp" />
 
+    <!--Restart the quiz    -->
     <Button
-        android:id="@+id/restart"
+        android:id="@+id/Restart_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

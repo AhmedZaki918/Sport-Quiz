@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
-
+    //Variables declarations.
     TextView finalScore;
     Button restart;
 
@@ -18,14 +18,16 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        finalScore = findViewById(R.id.finalScore);
-        restart = findViewById(R.id.restart);
+        //Find locations of views.
+        finalScore = findViewById(R.id.finalScore_TextView);
+        restart = findViewById(R.id.Restart_Button);
 
-
-      String receive = getIntent().getStringExtra("Score");
+        //Create string variable and store it the score from MainActivity.
+        String receive = getIntent().getStringExtra("Score");
+        //Set score on finalScore TextView.
         finalScore.setText(receive);
 
-
+        //This button restart the quiz.
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
