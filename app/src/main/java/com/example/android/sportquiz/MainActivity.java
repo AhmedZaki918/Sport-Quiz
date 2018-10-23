@@ -1,6 +1,7 @@
 package com.example.android.sportquiz;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,9 +14,10 @@ public class MainActivity extends AppCompatActivity {
     //Variables declarations.
 
     TextView Question;
+    TextView Que;
     TextView scoreDisplay;
 
-    int score = 0;
+    private int score = 0;
 
     Button btn1;
     Button btn2;
@@ -27,10 +29,11 @@ public class MainActivity extends AppCompatActivity {
     Questions que = new Questions();
 
     //This variable gets requested question from mQuestions array in Questions class.
-    int mQuestionNumber = 0;
+    private int mQuestionNumber = 0;
+    private int QueScore10 = 0;
 
     //This variable gets right answer from mAnswer array in Questions class.
-    String answer;
+    private String answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         scoreDisplay = findViewById(R.id.Score_TextView);
         next = findViewById(R.id.Next_Button);
         Question = findViewById(R.id.Question_TextView);
+        Que = findViewById(R.id.Que_TextView);
 
         //TextView displays first question only.
         Question.setOnClickListener(new View.OnClickListener() {
@@ -208,9 +212,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 updateQuestion();
-                resetColors();
             }
         });
+    }
+
+    //This method update questions.
+    public void updateQuestion() {
+
+        QueScore10 ++;
+        Que.setText("Que: " + QueScore10 + " / 10");
+        resetColors();
+        setMultiAttributes();
+        Question.setText(que.mQuestions[mQuestionNumber]);
+        btn1.setText(que.mChoices[mQuestionNumber][0]);
+        btn2.setText(que.mChoices[mQuestionNumber][1]);
+        btn3.setText(que.mChoices[mQuestionNumber][2]);
+        btn4.setText(que.mChoices[mQuestionNumber][3]);
+        answer = que.mAnswer[mQuestionNumber];
+        mQuestionNumber++;
     }
 
     //This method reset colors for all buttons to default color.
@@ -222,19 +241,6 @@ public class MainActivity extends AppCompatActivity {
         btn4.setBackgroundResource(R.color.Buttons);
     }
 
-    //This method update questions.
-    public void updateQuestion() {
-
-        setTextSize();
-        Question.setText(que.mQuestions[mQuestionNumber]);
-        btn1.setText(que.mChoices[mQuestionNumber][0]);
-        btn2.setText(que.mChoices[mQuestionNumber][1]);
-        btn3.setText(que.mChoices[mQuestionNumber][2]);
-        btn4.setText(que.mChoices[mQuestionNumber][3]);
-        answer = que.mAnswer[mQuestionNumber];
-        mQuestionNumber++;
-    }
-
     //This method displays the score.
     public void displayScore() {
 
@@ -242,13 +248,21 @@ public class MainActivity extends AppCompatActivity {
         scoreDisplay.setText("Score : " + score);
     }
 
-    //This method set text size of buttons and question.
-    public void setTextSize() {
+    //This method set multi attributes of buttons and question.
+    public void setMultiAttributes() {
 
         Question.setTextSize(25);
         btn1.setTextSize(20);
         btn2.setTextSize(20);
         btn3.setTextSize(20);
         btn4.setTextSize(20);
+        btn1.setAllCaps(false);
+        btn2.setAllCaps(false);
+        btn3.setAllCaps(false);
+        btn4.setAllCaps(false);
+        btn1.setTypeface(Typeface.MONOSPACE);
+        btn2.setTypeface(Typeface.MONOSPACE);
+        btn3.setTypeface(Typeface.MONOSPACE);
+        btn4.setTypeface(Typeface.MONOSPACE);
     }
 }

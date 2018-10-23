@@ -2,6 +2,8 @@ package com.example.android.sportquiz;
 
 public class Questions {
 
+
+
     //String array of the questions.
     public String[] mQuestions = {"Who is highest goalscorer in world cup football history ?",
             "How many times has Brazil won the FIFA World Cup ?",
@@ -20,7 +22,7 @@ public class Questions {
             {"Second rank", "Sixth rank", "Third rank", "Fifth rank"},
             {"Jose Mourinho", "Pep Guardiola", "Carlo Ancelotti", "Jurgen Klopp"},
             {"1", "2", "3", "4"},
-            {"Manchester United", "Liverpool FC", "Manchester City", "chelsea"},
+            {"Manchester United", "Liverpool FC", "Manchester City", "Chelsea"},
             {"Cameroonian", "Senegalese", "Malian", "South African"},
             {"Chelsea", "Arsenal", "Manchester United", "Liverpool FC"},
             {"Nimar", "Luka Modric", "Eden Hazard", "Antoine Griezmann"},
@@ -28,6 +30,4 @@ public class Questions {
 
     //String array of answers.
     public String[] mAnswer = {"Miroslav Klose", "5", "Third rank", "Carlo Ancelotti", "3", "Manchester City", "Senegalese", "Manchester United", "Luka Modric", "Real Madrid"};
-
-
 }
