@@ -13,21 +13,17 @@ public class MainActivity extends AppCompatActivity {
 
     //Variables declarations.
 
-    TextView Question;
-    TextView Que;
-    TextView scoreDisplay;
-
-    private int score = 0;
-
-    Button btn1;
-    Button btn2;
-    Button btn3;
-    Button btn4;
-    Button next;
-
     //Create object of class Questions.
     Questions que = new Questions();
-
+    private TextView Question;
+    private TextView Que;
+    private TextView scoreDisplay;
+    private int score = 0;
+    private Button btn1;
+    private Button btn2;
+    private Button btn3;
+    private Button btn4;
+    private Button next;
     //This variable gets requested question from mQuestions array in Questions class.
     private int mQuestionNumber = 0;
     private int QueScore10 = 0;
@@ -50,13 +46,8 @@ public class MainActivity extends AppCompatActivity {
         Question = findViewById(R.id.Question_TextView);
         Que = findViewById(R.id.Que_TextView);
 
-        //TextView displays first question only.
-        Question.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                updateQuestion();
-            }
-        });
+        //Displays the questions and chocies on screen at first time only.
+        updateQuestion();
 
         //This button A called when the user click on it.
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -217,9 +208,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //This method update questions.
-    public void updateQuestion() {
+    private void updateQuestion() {
 
-        QueScore10 ++;
+        QueScore10++;
         Que.setText("Que: " + QueScore10 + " / 10");
         resetColors();
         setMultiAttributes();
@@ -233,23 +224,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //This method reset colors for all buttons to default color.
-    public void resetColors() {
+    private void resetColors() {
 
         btn1.setBackgroundResource(R.color.Buttons);
         btn2.setBackgroundResource(R.color.Buttons);
         btn3.setBackgroundResource(R.color.Buttons);
         btn4.setBackgroundResource(R.color.Buttons);
+
     }
 
     //This method displays the score.
-    public void displayScore() {
+    private void displayScore() {
 
         score++;
         scoreDisplay.setText("Score : " + score);
     }
 
     //This method set multi attributes of buttons and question.
-    public void setMultiAttributes() {
+    private void setMultiAttributes() {
 
         Question.setTextSize(25);
         btn1.setTextSize(20);

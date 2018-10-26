@@ -40,9 +40,11 @@
     <!--Restart the quiz    -->
     <Button
         android:id="@+id/Restart_Button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
         android:background="@color/Next"
         android:text="@string/restart" />
 

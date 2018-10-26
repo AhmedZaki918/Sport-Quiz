@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
 
     //Variables declarations.
     TextView finalScore;
     Button restart;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +26,10 @@ public class ResultActivity extends AppCompatActivity {
 
         //Create string variable and store it the score from MainActivity.
         String receive = getIntent().getStringExtra("Score");
+
         //Set score on finalScore TextView.
         finalScore.setText(receive);
+        Toast.makeText(ResultActivity.this, "You scored  " + receive, Toast.LENGTH_LONG).show();
 
         //This button restart the quiz.
         restart.setOnClickListener(new View.OnClickListener() {

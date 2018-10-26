@@ -1,118 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <!-- Displays the score -->
-    <TextView
-        android:id="@+id/Score_TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="8dp"
-        android:fontFamily="casual"
-        android:textColor="@color/Black"
-        android:text="@string/score"
-        android:textSize="@dimen/textSizeScore" />
-
-    <!-- Displays the number of question  -->
-    <TextView
-        android:id="@+id/Que_TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:text="@string/queScore"
-        android:textSize="@dimen/textSizeScore"
-        android:layout_alignParentRight="true"
-        android:fontFamily="casual"
-        android:textColor="@color/Black"/>
-
-    <!-- Displays the question -->
-    <TextView
-        android:id="@+id/Question_TextView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="280dp"
-        android:layout_below="@id/Score_TextView"
-        android:layout_marginBottom="15dp"
-        android:background="@color/Question"
-        android:fontFamily="casual"
-        android:gravity="center"
-        android:text="@string/Question"
-        android:textColor="@color/Black"
-        android:textSize="@dimen/textSizeGo" />
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
 
-    <!-- ViewGroup for all buttons -->
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <!-- ViewGroup for buttons A & B -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Displays the score -->
+        <TextView
+            android:id="@+id/Score_TextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="casual"
+            android:text="@string/score"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSizeScore" />
 
-            <!-- Choice A -->
-            <Button
-                android:id="@+id/Answer1_Button"
-                style="@style/Buttons_1_2"
-                android:background="@color/Buttons"
-                android:text="@string/Choice1"
-                />
+        <!-- Displays the number of question  -->
+        <TextView
+            android:id="@+id/Que_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:fontFamily="casual"
+            android:text="@string/queScore"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSizeScore" />
 
-            <!-- Choice B -->
-            <Button
+        <!-- Displays the question -->
+        <TextView
+            android:id="@+id/Question_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_below="@id/Score_TextView"
+            android:layout_marginBottom="15dp"
+            android:background="@color/Question"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSizeGo" />
 
-                android:id="@+id/Answer2_Button"
-                style="@style/Buttons_1_2"
-                android:background="@color/Buttons"
-                android:text="@string/Choice2" />
+        <!-- ViewGroup for all buttons -->
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- ViewGroup for buttons A & B -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Choice A -->
+                <Button
+                    android:id="@+id/Answer1_Button"
+                    style="@style/Buttons_1_2"
+                    android:background="@color/Buttons" />
+
+                <!-- Choice B -->
+                <Button
+
+                    android:id="@+id/Answer2_Button"
+                    style="@style/Buttons_1_2"
+                    android:background="@color/Buttons" />
+
+
+            </LinearLayout>
+
+            <!-- ViewGroup for buttons C & D -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Choice C -->
+                <Button
+                    android:id="@+id/Answer3_Button"
+                    style="@style/Buttons_3_4"
+                    android:background="@color/Buttons" />
+
+                <!-- Choice D -->
+                <Button
+                    android:id="@+id/Answer4_Button"
+                    style="@style/Buttons_3_4"
+                    android:background="@color/Buttons" />
+
+
+            </LinearLayout>
 
 
         </LinearLayout>
 
-        <!-- ViewGroup for buttons C & D -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <!-- Choice C -->
+            <!-- Display the next question -->
             <Button
-                android:id="@+id/Answer3_Button"
-                style="@style/Buttons_3_4"
-                android:background="@color/Buttons"
-                android:text="@string/Choice3" />
-
-            <!-- Choice D -->
-            <Button
-                android:id="@+id/Answer4_Button"
-                style="@style/Buttons_3_4"
-                android:background="@color/Buttons"
-                android:text="@string/Choice4" />
+                android:id="@+id/Next_Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="535dp"
+                android:background="@color/Next"
+                android:text="@string/next"
+                android:textSize="@dimen/nextTextSize" />
 
 
         </LinearLayout>
 
 
-    </LinearLayout>
-
-    <!-- Display the next question -->
-    <Button
-        android:id="@+id/Next_Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
-        android:background="@color/Next"
-        android:text="@string/next"
-        android:textSize="@dimen/nextTextSize" />
+    </RelativeLayout>
 
 
-</RelativeLayout>
+</ScrollView>

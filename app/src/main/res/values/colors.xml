@@ -6,8 +6,8 @@
     <color name="Question">#E4E0EF</color>
     <color name="Buttons">#E0F2F1</color>
     <color name="Next">#B2DFDB</color>
-    <color name="True">#B2DFDB</color>
+    <color name="True">#A7FFEB</color>
     <color name="False">#FFCDD2</color>
-    <color name="Black">#000000</color>
+    <color name="Black">@android:color/black</color>
     <color name="ActivityResult">#E0F2F1</color>
 </resources>
