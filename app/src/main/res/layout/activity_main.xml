@@ -24,7 +24,7 @@
 
         <!-- Displays the number of question  -->
         <TextView
-            android:id="@+id/Que_TextView"
+            android:id="@+id/QueNumber_TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -38,65 +38,83 @@
         <TextView
             android:id="@+id/Question_TextView"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="315dp"
             android:layout_below="@id/Score_TextView"
-            android:layout_marginBottom="15dp"
             android:background="@color/Question"
             android:fontFamily="casual"
             android:gravity="center"
             android:textColor="@color/Black"
             android:textSize="@dimen/textSizeGo" />
 
-        <!-- ViewGroup for all buttons -->
+        <!-- ViewGroup for all views -->
         <LinearLayout
 
+            android:id="@+id/LinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!-- ViewGroup for buttons A & B -->
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/RadioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="355dp"
+                android:orientation="vertical">
 
-                <!-- Choice A -->
-                <Button
-                    android:id="@+id/Answer1_Button"
-                    style="@style/Buttons_1_2"
-                    android:background="@color/Buttons" />
+                <RadioButton
+                    android:id="@+id/Choice1_RadioButton"
+                    style="@style/Views" />
 
-                <!-- Choice B -->
-                <Button
+                <RadioButton
+                    android:id="@+id/Choice2_RadioButton"
+                    style="@style/Views" />
 
-                    android:id="@+id/Answer2_Button"
-                    style="@style/Buttons_1_2"
-                    android:background="@color/Buttons" />
+                <RadioButton
+                    android:id="@+id/Choice3_RadioButton"
+                    style="@style/Views" />
 
+                <RadioButton
+                    android:id="@+id/Choice4_RadioButton"
+                    style="@style/Views" />
 
-            </LinearLayout>
+            </RadioGroup>
 
-            <!-- ViewGroup for buttons C & D -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+        </LinearLayout>
 
-                <!-- Choice C -->
-                <Button
-                    android:id="@+id/Answer3_Button"
-                    style="@style/Buttons_3_4"
-                    android:background="@color/Buttons" />
+        <EditText
+            android:id="@+id/Answer_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Question_TextView"
+            android:gravity="center_horizontal"
+            android:hint="Enter a number"
+            android:inputType="number"
+            android:textSize="25sp"
+            android:visibility="gone" />
 
-                <!-- Choice D -->
-                <Button
-                    android:id="@+id/Answer4_Button"
-                    style="@style/Buttons_3_4"
-                    android:background="@color/Buttons" />
+        <LinearLayout
+            android:id="@+id/LineraLayout_CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Question_TextView"
+            android:orientation="vertical"
+            android:visibility="gone">
 
+            <CheckBox
+                android:id="@+id/Choice1_CheckBox"
+                style="@style/Views" />
 
-            </LinearLayout>
+            <CheckBox
+                android:id="@+id/Choice2_CheckBox"
+                style="@style/Views" />
 
+            <CheckBox
+                android:id="@+id/Choice3_CheckBox"
+                style="@style/Views" />
+
+            <CheckBox
+                android:id="@+id/Choice4_CheckBox"
+                style="@style/Views" />
 
         </LinearLayout>
 
@@ -104,22 +122,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <!-- Display the next question -->
             <Button
                 android:id="@+id/Next_Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="535dp"
+                android:layout_marginTop="550dp"
                 android:background="@color/Next"
                 android:text="@string/next"
                 android:textSize="@dimen/nextTextSize" />
-
-
         </LinearLayout>
 
-
     </RelativeLayout>
-
 
 </ScrollView>
