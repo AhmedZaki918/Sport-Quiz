@@ -74,33 +74,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
 
-                if (rb1.getText() == answer) {
+                if (rb1.getText().equals(answer)) {
                     rb1.setBackgroundColor(getResources().getColor(R.color.True));
                     displayScore();
 
-                    //Check if this the last question or not before update question.
-                    if (mQuestionNumber == que.mQuestions.length) {
-
-                        //Displays the ResultActivity.
-                        Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 10");
-                        startActivity(i);
-                    }
+                    //Turn off clicks on the remaining chocies.
+                    setClickable(rb2,rb3,rb4);
                 } else {
                     rb1.setBackgroundColor(getResources().getColor(R.color.False));
 
-                    //Check if this the last question or not before update question.
-                    if (mQuestionNumber == que.mQuestions.length) {
-
-                        //Displays the ResultActivity.
-                        Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 10");
-                        startActivity(i);
-                    }
-                    //Displays the ResultActivity.
-                    Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                    i.putExtra("Score", score + " / 10");
-                    startActivity(i);
+                    //Turn off clicks on the remaining chocies.
+                    setClickable(rb2,rb3,rb4);
                 }
             }
         });
@@ -110,33 +94,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
 
-                if (rb2.getText() == answer) {
+                if (rb2.getText().equals(answer)) {
                     rb2.setBackgroundColor(getResources().getColor(R.color.True));
                     displayScore();
 
-                    //Check if this the last question or not before update question.
-                    if (mQuestionNumber == que.mQuestions.length) {
-
-                        //Displays the ResultActivity.
-                        Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 10");
-                        startActivity(i);
-                    }
+                    //Turn off clicks on the remaining chocies.
+                    setClickable(rb1,rb3,rb4);
                 } else {
                     rb2.setBackgroundColor(getResources().getColor(R.color.False));
 
-                    //Check if this the last question or not before update question.
-                    if (mQuestionNumber == que.mQuestions.length) {
-
-                        //Displays the ResultActivity.
-                        Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 10");
-                        startActivity(i);
-                    }
-                    //Displays the ResultActivity.
-                    Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                    i.putExtra("Score", score + " / 10");
-                    startActivity(i);
+                    //Turn off clicks on the remaining chocies.
+                    setClickable(rb1,rb3,rb4);
                 }
             }
         });
@@ -146,33 +114,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
 
-                if (rb3.getText() == answer) {
+                if (rb3.getText().equals(answer)) {
                     rb3.setBackgroundColor(getResources().getColor(R.color.True));
                     displayScore();
 
-                    //Check if this the last question or not before update question.
-                    if (mQuestionNumber == que.mQuestions.length) {
-
-                        //Displays the ResultActivity.
-                        Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 10");
-                        startActivity(i);
-                    }
+                    //Turn off clicks on the remaining chocies.
+                    setClickable(rb1,rb2,rb4);
                 } else {
                     rb3.setBackgroundColor(getResources().getColor(R.color.False));
 
-                    //Check if this the last question or not before update question.
-                    if (mQuestionNumber == que.mQuestions.length) {
-
-                        //Displays the ResultActivity.
-                        Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 10");
-                        startActivity(i);
-                    }
-                    //Displays the ResultActivity.
-                    Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                    i.putExtra("Score", score + " / 10");
-                    startActivity(i);
+                    //Turn off clicks on the remaining chocies.
+                    setClickable(rb1,rb2,rb4);
                 }
             }
         });
@@ -182,32 +134,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
 
-                if (rb4.getText() == answer) {
+                if (rb4.getText().equals(answer)) {
                     rb4.setBackgroundColor(getResources().getColor(R.color.True));
                     displayScore();
 
-                    //Check if this the last question or not before update question.
-                    if (mQuestionNumber == que.mQuestions.length) {
+                    //Turn off clicks on the remaining chocies.
+                    setClickable(rb1,rb2,rb3);
 
-                        //Displays the ResultActivity.
-                        Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 10");
-                        startActivity(i);
-                    }
                 } else {
                     rb4.setBackgroundColor(getResources().getColor(R.color.False));
-                    //Check if this the last question or not before update question.
-                    if (mQuestionNumber == que.mQuestions.length) {
 
-                        //Displays the ResultActivity.
-                        Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                        i.putExtra("Score", score + " / 10");
-                        startActivity(i);
-                    }
-                    //Displays the ResultActivity.
-                    Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                    i.putExtra("Score", score + " / 10");
-                    startActivity(i);
+                    //Turn off clicks on the remaining chocies.
+                    setClickable(rb1,rb2,rb3);
                 }
             }
         });
@@ -226,11 +164,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Check if the answer = 5, displays the score and if not update question only without update the score.
                 if (finalValue == 5) {
                     displayScore();
-                } else {
-                    //Displays the ResultActivity.
-                    Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                    i.putExtra("Score", score + " / 10");
-                    startActivity(i);
                 }
             }
         });
@@ -254,6 +187,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(i);
                 } else {
                     updateQuestion();
+
+                    //Set the RadioButtons clickable to ON.
+                    rb1.setClickable(true);
+                    rb2.setClickable(true);
+                    rb3.setClickable(true);
+                    rb4.setClickable(true);
                 }
             }
         });
@@ -366,6 +305,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //Uncheck the selections of RadioButtons.
     private void uncheckSelection() {
         rg.clearCheck();
+    }
+
+    //Turn off clicks on the remaining choices when the user answers the question.
+    private void setClickable(RadioButton first, RadioButton second, RadioButton third){
+        first.setClickable(false);
+        second.setClickable(false);
+        third.setClickable(false);
     }
 
     //Check if the user enter right answers or not.

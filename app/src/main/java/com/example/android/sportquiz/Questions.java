@@ -12,7 +12,7 @@ public class Questions {
             "What's the nationality of Liverpool player Sadio Mane ?",
             "Where does Belgian striker Lucaco play ?",
             "Who is the best player in the 2018 World Cup ?",
-            "Which three clubs of the following Pep Guardiola trains ?"};
+            "Which of the following clubs Pep Guardiola trains ?"};
 
     //String array of the choices.
     public String[][] mChoices = {{"Miroslav Klose", "Ronaldo", "Maradona", "Pele"},
