@@ -78,13 +78,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     rb1.setBackgroundColor(getResources().getColor(R.color.True));
                     displayScore();
 
-                    //Turn off clicks on the remaining chocies.
-                    setClickable(rb2,rb3,rb4);
+                    //Turn off clicks on all chocies.
+                    setAllClickable();
                 } else {
                     rb1.setBackgroundColor(getResources().getColor(R.color.False));
 
-                    //Turn off clicks on the remaining chocies.
-                    setClickable(rb2,rb3,rb4);
+                    //Turn off clicks on all chocies.
+                    setAllClickable();
                 }
             }
         });
@@ -98,13 +98,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     rb2.setBackgroundColor(getResources().getColor(R.color.True));
                     displayScore();
 
-                    //Turn off clicks on the remaining chocies.
-                    setClickable(rb1,rb3,rb4);
+                    //Turn off clicks on all chocies.
+                    setAllClickable();
                 } else {
                     rb2.setBackgroundColor(getResources().getColor(R.color.False));
 
-                    //Turn off clicks on the remaining chocies.
-                    setClickable(rb1,rb3,rb4);
+                    //Turn off clicks on all chocies.
+                    setAllClickable();
                 }
             }
         });
@@ -118,13 +118,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     rb3.setBackgroundColor(getResources().getColor(R.color.True));
                     displayScore();
 
-                    //Turn off clicks on the remaining chocies.
-                    setClickable(rb1,rb2,rb4);
+                    //Turn off clicks on all chocies.
+                    setAllClickable();
                 } else {
                     rb3.setBackgroundColor(getResources().getColor(R.color.False));
 
-                    //Turn off clicks on the remaining chocies.
-                    setClickable(rb1,rb2,rb4);
+                    //Turn off clicks on all chocies.
+                    setAllClickable();
                 }
             }
         });
@@ -138,14 +138,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     rb4.setBackgroundColor(getResources().getColor(R.color.True));
                     displayScore();
 
-                    //Turn off clicks on the remaining chocies.
-                    setClickable(rb1,rb2,rb3);
+                    //Turn off clicks on all chocies.
+                    setAllClickable();
 
                 } else {
                     rb4.setBackgroundColor(getResources().getColor(R.color.False));
 
-                    //Turn off clicks on the remaining chocies.
-                    setClickable(rb1,rb2,rb3);
+                    //Turn off clicks on all chocies.
+                   setAllClickable();
                 }
             }
         });
@@ -307,11 +307,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rg.clearCheck();
     }
 
-    //Turn off clicks on the remaining choices when the user answers the question.
-    private void setClickable(RadioButton first, RadioButton second, RadioButton third){
-        first.setClickable(false);
-        second.setClickable(false);
-        third.setClickable(false);
+    //Turn off clicks on all choices when the user answers the question.
+    private void setAllClickable(){
+        rb1.setClickable(false);
+        rb2.setClickable(false);
+        rb3.setClickable(false);
+        rb4.setClickable(false);
     }
 
     //Check if the user enter right answers or not.
