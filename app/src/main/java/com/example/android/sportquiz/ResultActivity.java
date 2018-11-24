@@ -29,7 +29,7 @@ public class ResultActivity extends AppCompatActivity {
 
         //Set score on finalScore TextView.
         finalScore.setText(receive);
-        Toast.makeText(ResultActivity.this, "You scored  " + receive, Toast.LENGTH_LONG).show();
+        Toast.makeText(ResultActivity.this, "You scored  " + receive, Toast.LENGTH_SHORT).show();
 
         //This button restart the quiz.
         restart.setOnClickListener(new View.OnClickListener() {

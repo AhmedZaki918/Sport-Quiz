@@ -14,28 +14,44 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //Create object of class Questions.
     Questions que = new Questions();
 
     //Variables declarations.
-    private LinearLayout liCheckBox;
-    private RadioGroup rg;
-    private EditText answerEditText;
-    private TextView Question;
-    private TextView queNumber;
-    private TextView scoreDisplay;
     private int score = 0;
-    private RadioButton rb1;
-    private RadioButton rb2;
-    private RadioButton rb3;
-    private RadioButton rb4;
     private CheckBox ch1;
     private CheckBox ch2;
     private CheckBox ch3;
     private CheckBox ch4;
-    private Button next;
+
+    @BindView(R.id.Score_TextView)
+    TextView scoreDisplay;
+    @BindView(R.id.Choice1_RadioButton)
+    RadioButton rb1;
+    @BindView(R.id.Choice2_RadioButton)
+    RadioButton rb2;
+    @BindView(R.id.Choice3_RadioButton)
+    RadioButton rb3;
+    @BindView(R.id.Choice4_RadioButton)
+    RadioButton rb4;
+    @BindView(R.id.Next_Button)
+    Button next;
+    @BindView(R.id.Answer_EditText)
+    EditText answerEditText;
+    @BindView(R.id.Question_TextView)
+    TextView Question;
+    @BindView(R.id.RadioGroup)
+    RadioGroup rg;
+    @BindView(R.id.QueNumber_TextView)
+    TextView queNumber;
+    @BindView(R.id.LineraLayout_CheckBox)
+    LinearLayout liCheckBox;
 
     //This variable gets requested question from mQuestions array in Questions class.
     private int mQuestionNumber = 0;
@@ -49,30 +65,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Find locations of views.
-        rg = findViewById(R.id.RadioGroup);
-        rb1 = findViewById(R.id.Choice1_RadioButton);
-        rb2 = findViewById(R.id.Choice2_RadioButton);
-        rb3 = findViewById(R.id.Choice3_RadioButton);
-        rb4 = findViewById(R.id.Choice4_RadioButton);
+        ButterKnife.bind(this);
+
         ch1 = findViewById(R.id.Choice1_CheckBox);
         ch2 = findViewById(R.id.Choice2_CheckBox);
         ch3 = findViewById(R.id.Choice3_CheckBox);
         ch4 = findViewById(R.id.Choice4_CheckBox);
-        answerEditText = findViewById(R.id.Answer_EditText);
-        scoreDisplay = findViewById(R.id.Score_TextView);
-        next = findViewById(R.id.Next_Button);
-        Question = findViewById(R.id.Question_TextView);
-        queNumber = findViewById(R.id.QueNumber_TextView);
-        liCheckBox = findViewById(R.id.LineraLayout_CheckBox);
 
         //Displays the questions and chocies on screen at first time only.
         updateQuestion();
 
-        //This RadioButton 1 called when the user click on it.
-        rb1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        //Set one onClickListner for all checkboxes.
+        ch1.setOnClickListener(this);
+        ch2.setOnClickListener(this);
+        ch3.setOnClickListener(this);
+        ch4.setOnClickListener(this);
+    }
+
+    @OnClick({R.id.Choice1_RadioButton,
+            R.id.Choice2_RadioButton,
+            R.id.Choice3_RadioButton,
+            R.id.Choice4_RadioButton,
+            R.id.Next_Button, R.id.Answer_EditText})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            //This RadioButton 1 called when the user click on it.
+            case R.id.Choice1_RadioButton:
 
                 if (rb1.getText().equals(answer)) {
                     rb1.setBackgroundColor(getResources().getColor(R.color.True));
@@ -86,13 +104,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //Turn off clicks on all chocies.
                     setAllClickable();
                 }
-            }
-        });
+                break;
 
-        //This RadioButton 2 called when the user click on it.
-        rb2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            //This RadioButton 2 called when the user click on it.
+            case R.id.Choice2_RadioButton:
 
                 if (rb2.getText().equals(answer)) {
                     rb2.setBackgroundColor(getResources().getColor(R.color.True));
@@ -106,13 +121,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //Turn off clicks on all chocies.
                     setAllClickable();
                 }
-            }
-        });
+                break;
 
-        //This RadioButton 3 called when the user click on it.
-        rb3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            //This RadioButton 3 called when the user click on it.
+            case R.id.Choice3_RadioButton:
 
                 if (rb3.getText().equals(answer)) {
                     rb3.setBackgroundColor(getResources().getColor(R.color.True));
@@ -126,13 +138,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //Turn off clicks on all chocies.
                     setAllClickable();
                 }
-            }
-        });
+                break;
 
-        //This RadioButton 4 called when the user click on it.
-        rb4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            //This RadioButton 4 called when the user click on it.
+            case R.id.Choice4_RadioButton:
 
                 if (rb4.getText().equals(answer)) {
                     rb4.setBackgroundColor(getResources().getColor(R.color.True));
@@ -140,44 +149,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     //Turn off clicks on all chocies.
                     setAllClickable();
-
                 } else {
                     rb4.setBackgroundColor(getResources().getColor(R.color.False));
 
                     //Turn off clicks on all chocies.
-                   setAllClickable();
+                    setAllClickable();
                 }
-            }
-        });
 
-        //Check if the user enter the right answer on EditText or not.
-        answerEditText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                break;
 
-                //Convert EditText to String and store it in  String variable.
-                String value = answerEditText.getText().toString();
-
-                //Convert String variable to Integer and store it in Integer variable.
-                int finalValue = Integer.parseInt(value);
-
-                //Check if the answer = 5, displays the score and if not update question only without update the score.
-                if (finalValue == 5) {
-                    displayScore();
-                }
-            }
-        });
-
-        //Set one onClickListner for all checkboxes.
-        ch1.setOnClickListener(this);
-        ch2.setOnClickListener(this);
-        ch3.setOnClickListener(this);
-        ch4.setOnClickListener(this);
-
-        //This next button displays next question.
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            //This next button displays next question.
+            case R.id.Next_Button:
 
                 if (mQuestionNumber == que.mQuestions.length) {
 
@@ -194,8 +176,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     rb3.setClickable(true);
                     rb4.setClickable(true);
                 }
-            }
-        });
+                break;
+
+            //Check if the user enter the right answer on EditText or not.
+            case R.id.Answer_EditText:
+
+                //Convert EditText to String and store it in  String variable.
+                String value = answerEditText.getText().toString();
+
+                //Convert String variable to Integer and store it in Integer variable.
+                int finalValue = Integer.parseInt(value);
+
+                //Check if the answer = 5, displays the score and if not update question only without update the score.
+                if (finalValue == 5) {
+                    displayScore();
+                }
+                break;
+        }
     }
 
     //This method update questions.
@@ -308,7 +305,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //Turn off clicks on all choices when the user answers the question.
-    private void setAllClickable(){
+    private void setAllClickable() {
         rb1.setClickable(false);
         rb2.setClickable(false);
         rb3.setClickable(false);
