@@ -17,6 +17,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnItemClick;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -25,10 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //Variables declarations.
     private int score = 0;
-    private CheckBox ch1;
-    private CheckBox ch2;
-    private CheckBox ch3;
-    private CheckBox ch4;
 
     @BindView(R.id.Score_TextView)
     TextView scoreDisplay;
@@ -52,11 +49,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView queNumber;
     @BindView(R.id.LineraLayout_CheckBox)
     LinearLayout liCheckBox;
+    @BindView(R.id.Choice1_CheckBox)
+    CheckBox ch1;
+    @BindView(R.id.Choice2_CheckBox)
+    CheckBox ch2;
+    @BindView(R.id.Choice3_CheckBox)
+    CheckBox ch3;
+    @BindView(R.id.Choice4_CheckBox)
+    CheckBox ch4;
 
     //This variable gets requested question from mQuestions array in Questions class.
     private int mQuestionNumber = 0;
     private int QueScore10 = 0;
-
     //This variable gets right answer from mAnswer array in Questions class.
     private String answer;
 
@@ -67,26 +71,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ButterKnife.bind(this);
 
-        ch1 = findViewById(R.id.Choice1_CheckBox);
-        ch2 = findViewById(R.id.Choice2_CheckBox);
-        ch3 = findViewById(R.id.Choice3_CheckBox);
-        ch4 = findViewById(R.id.Choice4_CheckBox);
-
         //Displays the questions and chocies on screen at first time only.
         updateQuestion();
-
-        //Set one onClickListner for all checkboxes.
-        ch1.setOnClickListener(this);
-        ch2.setOnClickListener(this);
-        ch3.setOnClickListener(this);
-        ch4.setOnClickListener(this);
     }
 
     @OnClick({R.id.Choice1_RadioButton,
             R.id.Choice2_RadioButton,
             R.id.Choice3_RadioButton,
             R.id.Choice4_RadioButton,
-            R.id.Next_Button, R.id.Answer_EditText})
+            R.id.Next_Button,
+            R.id.Answer_EditText,
+            R.id.Choice1_CheckBox,
+            R.id.Choice2_CheckBox,
+            R.id.Choice3_CheckBox,
+            R.id.Choice4_CheckBox})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             //This RadioButton 1 called when the user click on it.
@@ -191,6 +189,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (finalValue == 5) {
                     displayScore();
                 }
+                break;
+
+            case R.id.Choice1_CheckBox:
+            case R.id.Choice2_CheckBox:
+            case R.id.Choice3_CheckBox:
+            case R.id.Choice4_CheckBox:
+
+                //Set one onClickListner for all checkboxes.
+                ch1.setOnClickListener(this);
+                ch2.setOnClickListener(this);
+                ch3.setOnClickListener(this);
+                ch4.setOnClickListener(this);
+
                 break;
         }
     }
